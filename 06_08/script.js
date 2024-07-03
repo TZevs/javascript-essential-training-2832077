@@ -3,7 +3,7 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Arithmetic_operators
  */
 
-let a = 5;
+let a = 2;
 let b = 4;
 let c = 3.2;
 
