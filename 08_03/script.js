@@ -9,6 +9,12 @@ const greenPack = {
   volume: 8,
   pocketNum: 3,
 };
+const bluePack = {
+  name: "Sky Pack",
+  color: "Blue",
+  volume: 10,
+  pocketNum: 4,
+};
 
 const addPack = function (currentPack) {
   const newArticle = document.createElement("article");
@@ -25,3 +31,4 @@ const addPack = function (currentPack) {
 
 const main = document.querySelector("main");
 main.append(addPack(greenPack));
+main.append(addPack(bluePack));
