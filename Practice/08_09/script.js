@@ -24,6 +24,8 @@ const frogpack = {
   },
   lidOpen: false,
   image: "../../assets/images/frog.svg",
+  description: 
+    "A green kids backpack designed to make the lid look like the face of a frog sticking out its tongue.",
   toggleLid: function (lidStatus) {
     this.lidOpen = lidStatus;
   },
@@ -57,3 +59,24 @@ const content = `
       }</span></li>
     </ul>  
 `;
+
+const addFigure = (dataObj) => { 
+  let newFigure = document.createElement("figure"); // Creates a figure element.
+  let newImage = document.createElement("img"); // Creates a img element. 
+  newImage.setAttribute("src", dataObj.image);  // Adds the src attribute, sets the value to the image link in the object.
+  newImage.setAttribute("alt", "New Image");  // Adds alt attribute, sets value to "new image".
+  let newDesc = document.createElement("figcaption"); // Creates a figcaption element.
+  newDesc.innerHTML = dataObj.description;  // Puts the description from the object into the HTML of the figcaption. 
+  newFigure.append(newImage, newDesc); // Adds the image and descitption elements into the figure, one after the other. 
+  return newFigure; // Return the figure with the image and description inside it. 
+}
+
+const createArticle = (backpack) => { // Parameter wants the object with data. 
+  let newArticle = document.createElement("article"); // Create an article element.
+  newArticle.innerHTML = content; // Adds the template literal to the article element HTML.
+  newArticle.prepend(addFigure(backpack));  // Adds the figure created in the other function before the article HTML. 
+  return newArticle; // Returns the article with the figure.
+}
+
+document.querySelector("main").append(createArticle(frogpack));
+// Finds the main element, adds the article to the main element with the object created at the top.
